@@ -12,5 +12,46 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    {
+      title: 'About details',
+      name: "about",
+      type: "document",
+      fields: [
+        {
+          name: 'title',
+          type: 'string'
+        },
+        {
+          name: 'fullName',
+          title: 'Full Name',
+          type: 'string'
+        },
+        {
+          name: 'bio',
+          title: 'Biography',
+          name: 'content',
+          type: 'array',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'externalLinks',
+          title: 'Social media and external links',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'text', title: 'Link text', type:'string'},
+                { name: 'href', title: 'Link url', type: 'string'}
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]),
 })
