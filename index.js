@@ -1,5 +1,7 @@
 const fs = require('fs');
 const Handlebars = require('handlebars');
+const client = require("./utils/SanityClient");
+const blocksToHtml = require('@sanity/block-content-to-html');
 
 function buildHTML(filename, data) {
     const source = fs.readFileSync(filename, 'utf-8').toString();
@@ -9,8 +11,23 @@ function buildHTML(filename, data) {
     return output;
 }
 
+async function getSanityData() {
+    //Create the query
+    const query = `{
+        "about": *[_id == 'drafts.fcf01a0c-8eaa-4d4e-b3eb-a1d85fd7a1bc'][0]
+    }`
+    //Fetch the data
+    let data = await client.fetch(query);
+    //Convert the block content from the RTE to HTML
+    data.about.content = blocksToHtml({
+        blocks: data.about.content
+    })
+    return await data
+}
+
 async function main(src, dist) {
-    const html = buildHTML(src, {"variableData": "Made with Handlebars and Sanity.io"});
+    const data = await getSanityData();
+    const html = buildHTML(src, data);
 
     fs.writeFile(dist, html, function(err) {
         if (err) return console.log(err);
@@ -18,4 +35,4 @@ async function main(src, dist) {
     });
 }
 
-main('./src/index.html', './dist/index.html')
+main('./src/index.html', './dist/index.html');

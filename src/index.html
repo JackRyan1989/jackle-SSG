@@ -8,7 +8,13 @@
 
     <h1>Test page made in Jackle SSG!</h1>
 
-    <p>{{variableData}}</p>
+    {{{about.content}}}
+
+    <ul>
+        {{#each about.externalLinks}}
+        <li><a href="{{this.href}}">{{this.text}}</a></li>
+        {{/each}}
+    </ul>
 
 </body>
 </html>

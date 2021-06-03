@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/JackRyan1989/jackle-SSG#readme",
   "dependencies": {
+    "@sanity/block-content-to-html": "^2.0.0",
+    "@sanity/client": "^2.10.5",
     "handlebars": "^4.7.7"
   }
 }
