@@ -14,7 +14,7 @@ function buildHTML(filename, data) {
 async function getSanityData() {
     //Create the query
     const query = `{
-        "about": *[_id == 'drafts.fcf01a0c-8eaa-4d4e-b3eb-a1d85fd7a1bc'][0]
+        "about": *[_id == 'fcf01a0c-8eaa-4d4e-b3eb-a1d85fd7a1bc'][0]
     }`
     //Fetch the data
     let data = await client.fetch(query);

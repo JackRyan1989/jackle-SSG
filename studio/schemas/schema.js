@@ -29,7 +29,6 @@ export default createSchema({
         {
           name: 'bio',
           title: 'Biography',
-          name: 'content',
           type: 'array',
           of: [
             {
