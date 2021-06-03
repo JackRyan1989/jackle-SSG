@@ -19,8 +19,8 @@ async function getSanityData() {
     //Fetch the data
     let data = await client.fetch(query);
     //Convert the block content from the RTE to HTML
-    data.about.content = blocksToHtml({
-        blocks: data.about.content
+    data.about.bio = blocksToHtml({
+        blocks: data.about.bio
     })
     return await data
 }
