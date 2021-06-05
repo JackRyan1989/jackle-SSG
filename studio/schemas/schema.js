@@ -13,6 +13,32 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     {
+      title: 'Projects details',
+      name: "projects",
+      type: "document",
+      fields: [
+        {
+          name: 'title',
+          type: 'string'
+        },
+        {
+          name: 'externalLinks',
+          title: 'projectLinks',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'text', title: 'Link text', type:'string'},
+                { name: 'href', title: 'Link url', type: 'string'},
+                {name: 'description', title:'Project Description', type: 'string'}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       title: 'About details',
       name: "about",
       type: "document",

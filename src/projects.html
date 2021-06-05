@@ -2,19 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jackel SSG</title>
+    <title>Jackel SSG -- Projects</title>
 </head>
 <body>
-
-    <h1>Test page made in Jackel SSG!</h1>
-
-    {{{about.bio}}}
-
+    <h1>{{projects.title}}</h1>
     <ul>
-        {{#each about.externalLinks}}
+        {{#each projects.externalLinks}}
         <li><a href="{{this.href}}">{{this.text}}</a></li>
         {{/each}}
     </ul>
-
 </body>
-</html>
