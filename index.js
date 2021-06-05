@@ -3,9 +3,10 @@ const path = require("path");
 const Handlebars = require("handlebars");
 const client = require("./utils/SanityClient");
 const blocksToHtml = require("@sanity/block-content-to-html");
+const { source, dest, extension, query } = require('./utils/config');
 
 function makeFileList(src) {
-  const extension = ".html";
+  //const extension = ".html";
   const dirPath = path.join(__dirname, src);
   let fileList = fs.readdirSync(dirPath, function (err, files) {
     if (err) {
@@ -17,21 +18,15 @@ function makeFileList(src) {
   return fileList;
 }
 
-function buildHTML(filename, data) {
-  const dir = path.join(__dirname, "/src/", filename);
+function buildHTML(src, filename, data) {
+  const dir = path.join(__dirname, src, filename);
   const source = fs.readFileSync(dir, "utf-8").toString();
   const template = Handlebars.compile(source);
   const output = template(data);
   return output;
 }
 
-//Next steps: grab data for all pages.
 async function getSanityData() {
-  //Create the query
-  const query = `{
-        "about": *[_id == 'fcf01a0c-8eaa-4d4e-b3eb-a1d85fd7a1bc'][0],
-        "projects": *[_id == 'a7309525-95a1-4a2d-a8f9-650ac94a4c03'][0]
-    }`;
   //Fetch the data
   let data = await client.fetch(query);
   //Convert the block content from the RTE to HTML
@@ -45,7 +40,7 @@ async function main(src, dist) {
   const data = await getSanityData();
   const files = makeFileList(src);
   files.forEach((file) => {
-    let html = buildHTML(file, data);
+    let html = buildHTML(src, file, data);
     let dir = path.join(__dirname, dist, file);
     fs.writeFile(dir, html, function (err) {
       if (err) return console.log(err);
@@ -54,4 +49,4 @@ async function main(src, dist) {
   });
 }
 
-main("src/", "dist/");
+main(source, dest);
