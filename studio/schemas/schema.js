@@ -40,55 +40,39 @@ export default createSchema({
       ],
     },
     {
-      title: "Projects details",
-      name: "projects",
+      title: "Main Document",
+      name: "main",
       type: "document",
       fields: [
         {
-          name: "title",
+          name: "heading",
           type: "string",
+          title: "Heading",
         },
         {
-          name: "externalLinks",
-          title: "projectLinks",
+          name: "intro",
           type: "array",
+          title: "Introduction",
           of: [
             {
-              type: "object",
-              fields: [
-                { name: "text", title: "Link text", type: "string" },
-                { name: "href", title: "Link url", type: "string" },
-                { name: "target", title: "Target", type: "string" },
-                { name: "rel", title: "rel", type: "string" },
-                {
-                  name: "description",
-                  title: "Project Description",
-                  type: "string",
-                },
-              ],
+              type: "block",
             },
           ],
         },
-      ],
-    },
-    {
-      title: "About details",
-      name: "about",
-      type: "document",
-      fields: [
         {
-          name: "title",
-          type: "string",
-        },
-        {
-          name: "fullName",
-          title: "Full Name",
-          type: "string",
-        },
-        {
-          name: "bio",
-          title: "Biography",
+          name: "description",
           type: "array",
+          title: "Description",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+        {
+          name: "next",
+          type: "array",
+          title: "Next Steps",
           of: [
             {
               type: "block",
@@ -97,7 +81,7 @@ export default createSchema({
         },
         {
           name: "externalLinks",
-          title: "Social media and external links",
+          title: "External links",
           type: "array",
           of: [
             {
@@ -106,7 +90,7 @@ export default createSchema({
                 { name: "text", title: "Link text", type: "string" },
                 { name: "href", title: "Link url", type: "string" },
                 { name: "target", title: "Target", type: "string" },
-                { name: "rel", title: "rel", type: "string" }
+                { name: "noreferer", title: "Noreferer", type: "boolean" },
               ],
             },
           ],

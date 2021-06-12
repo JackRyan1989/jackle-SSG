@@ -1,20 +1,34 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jackel SSG</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{meta.title}}</title>
+    <meta
+      name="description"
+      content="Super Simple Static Site Generator"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+    />
+    <meta name="theme-color" content="#FB966E" />
+    <link rel="stylesheet" href="./stylesheets/global.css"/>
 </head>
 <body>
-
-    <h1>Test page made in Jackel SSG!</h1>
-
-    {{{about.bio}}}
-
-    <ul>
-        {{#each about.externalLinks}}
-        <li><a href="{{this.href}}">{{this.text}}</a></li>
+    <header>
+        <h1>{{main.heading}}</h1>
+    </header>
+    <article>
+        <p>{{main.intro}}</p>
+    </article>
+    <article>
+        <p>{{main.description}}</p>
+    </article>
+    <article>
+        {{#each main.externalLinks}}
+            <a href=`{{main.externalLinks.href}}` target=`{{main.externalLinks.target}}`>{{main.externalLinks.text}}</a>
         {{/each}}
-    </ul>
+    </article>
+    
 
 </body>
 </html>
