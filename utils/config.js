@@ -6,8 +6,8 @@ const dest = 'dist/'
 const extension = '.html';
 //Sanity IO Query:
 const query = `{
-    "about": *[_id == 'fcf01a0c-8eaa-4d4e-b3eb-a1d85fd7a1bc'][0],
-    "projects": *[_id == 'a7309525-95a1-4a2d-a8f9-650ac94a4c03'][0]
+    "meta": *[_id == '12476ba4-ba75-4984-8212-a657b0566af4'][0],
+    "main": *[_id == 'd0886069-472b-41ad-ac84-8f3c3cda7372'][0]
 }`;
 
 module.exports = { source, dest, extension, query };
