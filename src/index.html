@@ -24,9 +24,11 @@
         <p>{{{main.description}}}</p>
     </article>
     <article>
-        {{#each main.externalLinks}}
-            <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a>
-        {{/each}}
+        <ul>
+            {{#each main.externalLinks}}
+               <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>>
+            {{/each}}
+        </ul>
     </article>
     
 
