@@ -25,7 +25,7 @@
     </article>
     <article>
         {{#each main.externalLinks}}
-            <a href=`{{main.externalLinks.href}}` target=`{{main.externalLinks.target}}`>{{main.externalLinks.text}}</a>
+            <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a>
         {{/each}}
     </article>
     
