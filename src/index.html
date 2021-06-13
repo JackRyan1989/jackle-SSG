@@ -15,18 +15,18 @@
 </head>
 <body>
     <header>
-        <h1>{{{main.heading}}}</h1>
+        <h1 class="pad1">{{{main.heading}}}</h1>
     </header>
-    <article>
+    <article id="intro">
         <p>{{{main.intro}}}</p>
     </article>
-    <article>
+    <article id="desc">
         <p>{{{main.description}}}</p>
     </article>
-    <article>
+    <article id="links">
         <ul>
             {{#each main.externalLinks}}
-               <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>>
+               <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>
             {{/each}}
         </ul>
     </article>
