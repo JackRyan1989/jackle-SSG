@@ -6,7 +6,7 @@ function transformer(ast) {
   let newAst = {
     type: "Document",
     body: [
-      {attributes: []}, {content:[]}, {elements:[]} 
+      {attributes: []}, {cargo:[]}, {elements:[]} 
     ]
   };
 
@@ -53,10 +53,10 @@ function transformer(ast) {
         })
       }
     },
-    CONTENT: {
+    CARGO: {
       enter(node, parent) {     
-        parent._context[1].content.push({
-          type: 'content',
+        parent._context[1].cargo.push({
+          type: 'cargo',
           value: node.value
         })
       }
@@ -67,13 +67,13 @@ function transformer(ast) {
           type: "Element",
           name: node.name,
           attributes: [],
-          content: [],
+          cargo: [],
         };
-        node._context = [{attributes: element.attributes}, {content: element.content}];
+        node._context = [{attributes: element.attributes}, {cargo: element.cargo}];
         if (parent.type !== "DOMELEMENT") {
           parent._context[2].elements.push(element);
         } else {
-          parent._context[1].content.push(element);
+          parent._context[1].cargo.push(element);
         }
       },
     },

@@ -10,10 +10,10 @@ function codeGenerator(node) {
       return node.body[2].elements.map(codeGenerator).join("\n");
 
     case "Element":
-      if (node.name === "img") {
-        return `<${node.name} ${node.attributes.map(codeGenerator).join(" ")}/> ${node.content.map(codeGenerator).join(" ")}`;
+      if (node.name === "img" || node.name === "base" || node.name === "br" || node.name === "col" || node.name === "embed" || node.name === "hr" || node.name === "input" || node.name === "link" || node.name === "meta" || node.name === "param" || node.name === "source" || node.name === "track" || node.name === "wbr" ) {
+        return `<${node.name} ${node.attributes.map(codeGenerator).join(" ")}/> ${node.cargo.map(codeGenerator).join(" ")}`;
       } else {
-        return `<${node.name} ${node.attributes.map(codeGenerator).join(" ")}> ${node.content.map(codeGenerator).join(" ")} </${node.name}>`
+        return `<${node.name} ${node.attributes.map(codeGenerator).join(" ")}> ${node.cargo.map(codeGenerator).join(" ")} </${node.name}>`
       }
 
     case "class":
@@ -24,7 +24,7 @@ function codeGenerator(node) {
       return `src="${node.value}"`;
     case "alt":
       return `alt="${node.value}"`;
-    case "content":
+    case "cargo":
       return  node.value;
   }
 }

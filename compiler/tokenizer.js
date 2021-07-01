@@ -18,7 +18,7 @@
 // attribute -- e.g. src(www.url.com) -> <img src="www.url.com" />
 // class -- e.g. h1: { class(className) } -> <h1 class="className"></h1>
 // id -- e.g. h1: { id(key) } -> <h1 id="key"></h1>
-// content -- e.g. h1: { <This is a heading!> } -> <h1>This is a heading!</h1>
+// content - NOW CARGO - JR 7/1/21 -- e.g. h1: { <This is a heading!> } -> <h1>This is a heading!</h1>
 //
 // So, the items that build up that output are:
 // tokens = [
@@ -58,13 +58,13 @@
 //                  type: 'Class',
 //                  value: 'leadText'},
 //               {
-//                  type: 'Content',
+//                  type: 'Cargo',
 //                  value: 'Aliquam eu commodo sem, id mollis arcu. Nam at massa ex. In quis feugiat orci. Suspendisse placerat condimentum sapien, vitae rhoncus lectus volutpat euismod. Suspendisse tincidunt diam vitae nibh molestie, ut suscipit sapien vehicula. Nullam purus nisl, cursus vitae elit eget, tristique pellentesque tellus. In hac habitasse platea dictumst. Cras pretium velit orci, in lobortis dolor fermentum a. Cras efficitur condimentum turpis, sit amet blandit tortor ornare nec. Quisque molestie diam et eros ultrices, porta dictum magna sollicitudin. Nullam vel ex et nisi ultricies pellentesque et id elit.'
 //                 }]
 //          }, {
 //              type: 'Element',
 //              name: 'blockquote',
-//              params: [{type: 'Class', value: 'quote'},{ type: 'Content', value: 'He said this!'}]
+//              params: [{type: 'Class', value: 'quote'},{ type: 'Cargo', value: 'He said this!'}]
 //          },
 //          {
 //              type: 'Element',
@@ -73,7 +73,7 @@
 //                  type: 'Class',
 //                  value: 'leadText'},
 //               {
-//                  type: 'Content',
+//                  type: 'Cargo',
 //                  value: {{main.test}}
 //              }]
 //          }]
@@ -122,9 +122,9 @@ function tokenizer(input) {
       current++;
       continue;
     }
-    // ~~~~~~~~GRAB THE ELEMENT CONTENT~~~~~~~~~~~~
-    //We want to grab all of the content that will be placed within our HTML
-    //tag. The < arrow indicates the start of content, and the > indicates the end of the content.
+    // ~~~~~~~~GRAB THE ELEMENT CARGO~~~~~~~~~~~~
+    //We want to grab all of the content/cargo that will be placed within our HTML
+    //tag. The < arrow indicates the start of content/cargo, and the > indicates the end of the content.
     if (char === "<") {
       let value = "";
       // This skips the opening <
@@ -136,7 +136,7 @@ function tokenizer(input) {
       // This skips the closing >
       char = input[++current];
 
-      tokens.push({ type: "content", value });
+      tokens.push({ type: "cargo", value });
       continue;
     }
 
@@ -156,8 +156,9 @@ function tokenizer(input) {
     //target
     //rel
     //We don't necessarily want to grab the () because on their own they don't really mean anything.
-    //They are just used to separate the content that follows them from the preceding keyword.
+    //They are just used to separate the content/cargo that follows them from the preceding keyword.
     //Test for letter:
+//~~~~~~~~~~~~~~~~~~~Elements~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     let letters = /[a-z0-9]/i;
     //If we find a letter, then:
     if (letters.test(char)) {
@@ -520,7 +521,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        //Attributes:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Attributes:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         if (item === "class") {
           char = input[++current];
           while (char !== ")") {

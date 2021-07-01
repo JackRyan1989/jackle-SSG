@@ -27,7 +27,7 @@ function traverser(ast, visitor) {
                 break;
             case "BRACKET":
             case "CLASS":
-            case "CONTENT":
+            case "CARGO":
             case "ID":
                 break;
         }
