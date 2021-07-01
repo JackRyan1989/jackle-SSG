@@ -21,6 +21,7 @@ function transformer(ast) {
 
   traverser(ast, {
     // Now we define our visitor methods:
+    // Add in new attributes for our visitor methods:
     CLASS: {
       enter(node, parent) {
         parent._context[0].attributes.push({
@@ -49,6 +50,62 @@ function transformer(ast) {
       enter(node,parent) {
         parent._context[0].attributes.push({
           type: 'alt',
+          value: node.value
+        })
+      }
+    },
+    HTTPEQUIV: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'http-equiv',
+          value: node.value
+        })
+      }
+    },
+    CONTENT: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'content',
+          value: node.value
+        })
+      }
+    },
+    NAME: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'name',
+          value: node.value
+        })
+      }
+    },
+    REL: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'rel',
+          value: node.value
+        })
+      }
+    },
+    HREF: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'href',
+          value: node.value
+        })
+      }
+    },
+    TARGET: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'target',
+          value: node.value
+        })
+      }
+    },
+    LANG: {
+      enter(node,parent) {
+        parent._context[0].attributes.push({
+          type: 'lang',
           value: node.value
         })
       }

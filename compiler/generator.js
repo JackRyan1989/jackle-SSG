@@ -15,7 +15,7 @@ function codeGenerator(node) {
       } else {
         return `<${node.name} ${node.attributes.map(codeGenerator).join(" ")}> ${node.cargo.map(codeGenerator).join(" ")} </${node.name}>`
       }
-
+//Add in new attributes:
     case "class":
       return `class="${node.value}"`;
     case "id":
@@ -24,6 +24,20 @@ function codeGenerator(node) {
       return `src="${node.value}"`;
     case "alt":
       return `alt="${node.value}"`;
+    case "http-equiv":
+      return `http-equiv="${node.value}"`;
+    case "content":
+      return `content="${node.value}"`;
+    case "name":
+      return `name="${node.value}"`;
+    case "rel":
+      return `rel="${node.value}"`;
+    case "href":
+      return `href="${node.value}"`;
+    case "target":
+      return `target="${node.value}"`;
+    case "lang":
+      return `lang="${node.value}"`;
     case "cargo":
       return  node.value;
   }

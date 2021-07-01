@@ -124,16 +124,16 @@ function tokenizer(input) {
     }
     // ~~~~~~~~GRAB THE ELEMENT CARGO~~~~~~~~~~~~
     //We want to grab all of the content/cargo that will be placed within our HTML
-    //tag. The < arrow indicates the start of content/cargo, and the > indicates the end of the content.
-    if (char === "<") {
+    //tag. The double arrow indicates the start of content/cargo, and the >> indicates the end of the content.
+    if (char === "[") {
       let value = "";
-      // This skips the opening <
+      // This skips the opening <<
       char = input[++current];
-      while (char !== ">") {
+      while (char !== "]") {
         value += char;
         char = input[++current];
       }
-      // This skips the closing >
+      // This skips the closing >>
       char = input[++current];
 
       tokens.push({ type: "cargo", value });
@@ -190,7 +190,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "style") {
+        if (item === "style" && !letters.test(input[++current])) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -594,7 +594,7 @@ function tokenizer(input) {
             value += char;
             char = input[++current];
           }
-          tokens.push({ type: item, value });
+          tokens.push({ type: 'httpequiv', value });
           continue;
         }
         if (item === "content") {
