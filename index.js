@@ -6,9 +6,6 @@ const blocksToHtml = require("@sanity/block-content-to-html");
 const { source, dest, query } = require("./utils/config");
 const compile = require("./compiler/compile");
 
-//4. Save the html file in the src dir - this is ok since we then filter out non-html files for when
-// we compile with handlebars and add the data from Sanity IO.
-
 //Grab all html files:
 function makeFileList(src, ext) {
   const dirPath = path.join(__dirname, src);

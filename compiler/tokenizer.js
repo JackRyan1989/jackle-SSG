@@ -269,7 +269,7 @@ function tokenizer(input) {
           continue;
         }
         //Text Content
-        if (item === "p" && !letters.test(input[++current]) && !letters.test(input[--current])) {
+        if (item === "p" && !letters.test(char)) {
           tokens.push({ type: "element", value: item });
           continue;
         }
