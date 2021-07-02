@@ -25,10 +25,7 @@ function traverser(ast, visitor) {
             case 'DOMELEMENT':
                 traverseArray(node.params, node);
                 break;
-            case "BRACKET":
-            case "CLASS":
             case "CARGO":
-            case "ID":
                 break;
         }
         if (methods && methods.exit) {

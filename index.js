@@ -6,12 +6,6 @@ const blocksToHtml = require("@sanity/block-content-to-html");
 const { source, dest, query } = require("./utils/config");
 const compile = require("./compiler/compile");
 
-//To do:
-//Introduce the compiler and use it to generate HTML files.
-//It should:
-//1. Read in .js files from the src dir
-//2. Compile them to a string
-//3. Write the string to an html file
 //4. Save the html file in the src dir - this is ok since we then filter out non-html files for when
 // we compile with handlebars and add the data from Sanity IO.
 
@@ -25,14 +19,8 @@ function makeFileList(src, ext) {
 }
 //Compile the HTML files using Handlebars
 function buildHTML(src, filename, data) {
-  const dir = path.join(__dirname, src, filename);
-  let source;
-  try { 
-     fs.accessSync(dir, fs.R_OK | fs.W_OK);
-     source = fs.readFileSync(dir, 'utf-8');
-   } catch (error) {
-     console.error(error)
-   }
+  const htmlDir = path.join(__dirname, src, filename);
+  const source = fs.readFileSync(htmlDir, 'utf-8');
   const template = Handlebars.compile(source);
   const output = template(data);
   return output;
@@ -44,7 +32,8 @@ function writeFile(directory, content) {
     fs.writeFile(newHTMLDir, content, function (err) {
       if (err) return console.log(err);
     });
-  } else {
+  } 
+  if ((directory.split(".").pop() === "html") ) {
     fs.writeFile(directory, content, function (err) {
       if (err) return console.log(err);
     });

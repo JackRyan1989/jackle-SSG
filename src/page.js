@@ -22,7 +22,7 @@
         }
         link: {
             rel(stylesheet)
-            href("./stylesheets/global.css")
+            href(./stylesheets/global.css)
         }
     }
     body: {
@@ -53,4 +53,4 @@
             }
         }
     }
-}`
+  }`

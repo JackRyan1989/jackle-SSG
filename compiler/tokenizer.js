@@ -178,7 +178,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "head" && input[++current] !== "e") {
+        if (item === "head" && input[current] !== 'e') {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -190,7 +190,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "style" && !letters.test(input[++current])) {
+        if (item === "style" && !letters.test(input[current])) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -216,11 +216,11 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "header") {
-          tokens.push({ type: "element", value: item });
+        if (item === "head" && input[current] === "e") {
+          tokens.push({ type: "element", value: "header" });
           continue;
         }
-        if (item === "main" && !letters.test(input[++current])) {
+        if (item === "main" && !letters.test(input[current])) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -277,7 +277,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "dd" && !letters.test(input[++current]) ) {
+        if (item === "dd" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -301,23 +301,23 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "hr" && !letters.test(input[++current]) ) {
+        if (item === "hr" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "li" && !letters.test(input[++current]) ) {
+        if (item === "li" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "ol" && !letters.test(input[++current]) ) {
+        if (item === "ol" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "pre" && !letters.test(input[++current]) ) {
+        if (item === "pre" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "ul" && !letters.test(input[++current]) ) {
+        if (item === "ul" && !letters.test(char) ) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -326,7 +326,7 @@ function tokenizer(input) {
           continue;
         }
         //Image and multimedia
-        if (item === "area" && !letters.test(input[++current])) {
+        if (item === "area" && !letters.test(char)) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -334,7 +334,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "map" && !letters.test(input[++current])) {
+        if (item === "map" && !letters.test(char)) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -402,7 +402,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "col" && !letters.test(input[++current])) {
+        if (item === "col" && !letters.test(char)) {
           tokens.push({ type: "element", value: item });
           continue;
         }
@@ -426,7 +426,7 @@ function tokenizer(input) {
           tokens.push({ type: "element", value: item });
           continue;
         }
-        if (item === "th" && !letters.test(input[++current])) {
+        if (item === "th" && !letters.test(char)) {
           tokens.push({ type: "element", value: item });
           continue;
         }
