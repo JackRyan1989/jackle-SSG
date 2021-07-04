@@ -41,6 +41,9 @@ export default createSchema({
     // 1. Left Navigation
     // 2. Footer
     // 3. Next page / Previous Page
+    //~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~Pages~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~
     {
       title: "Meta Information",
       name: "meta",
@@ -69,8 +72,8 @@ export default createSchema({
       ],
     },
     {
-      title: "Main Document",
-      name: "main",
+      title: "Index Page",
+      name: "index",
       type: "document",
       fields: [
         {
@@ -126,5 +129,193 @@ export default createSchema({
         },
       ],
     },
+    {
+      title: "Overview Page",
+      name: "overview",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "content",
+          type: "array",
+          title: "Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "Handlebars Setup",
+      name: "hbrs",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "content",
+          type: "array",
+          title: "Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "Sanity IO",
+      name: "sanity",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "content",
+          type: "array",
+          title: "Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "Netlify",
+      name: "netlify",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "content",
+          type: "array",
+          title: "Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "Jackyll Compiler",
+      name: "compiler",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "compiler",
+          type: "array",
+          title: "compiler",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+        {
+          name: "syntax",
+          type: "array",
+          title: "syntax",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "CSS Utility Classes",
+      name: "css",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "content",
+          type: "array",
+          title: "Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    },
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~Components:~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {
+      title: 'Navigation Links',
+      name: 'nav-links',
+      type: 'document',
+      fields: [
+        {
+          name: "internalLinks",
+          title: "Internal links",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                { name: "text", title: "Link text", type: "string" },
+                { name: "href", title: "Link url", type: "string" }
+              ],
+            },
+          ],
+        },
+      ]
+    },
+    {
+      title: "Footer",
+      name: "footer",
+      type: "document",
+      fields: [
+        {
+          name: "heading",
+          type: "string",
+          title: "Heading",
+        },
+        {
+          name: "footerContent",
+          type: "array",
+          title: "Footer Content",
+          of: [
+            {
+              type: "block",
+            },
+          ],
+        },
+      ]
+    }
   ]),
 });
