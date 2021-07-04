@@ -17,10 +17,15 @@ function makeFileList(src, ext) {
 //Compile the HTML files using Handlebars
 function buildHTML(src, filename, data) {
   const htmlDir = path.join(__dirname, src, filename);
-  const source = fs.readFileSync(htmlDir, 'utf-8');
-  const template = Handlebars.compile(source);
-  const output = template(data);
-  return output;
+fs.readFile(htmlDir, 'utf-8', function(err, file) {
+    if (err) {
+      throw err;
+    }
+    const template = Handlebars.compile(file);
+    const hbrsOutput = template(data);
+    let outputdir = path.join(__dirname, dest, filename);
+    writeFile(outputdir, hbrsOutput);
+  });
 }
 
 function writeFile(directory, content) {
@@ -55,7 +60,7 @@ async function getSanityData() {
 }
 
 //Put it all together:
-async function main(src, dist) {
+async function main(src) {
   const data = await getSanityData();
   const jsfiles = makeFileList(src, ".js");
   jsfiles.forEach((file) => {
@@ -67,10 +72,8 @@ async function main(src, dist) {
   });
   const htmlfiles = makeFileList(src, ".html");
   htmlfiles.forEach((file) => {
-    let html = buildHTML(src, file, data);
-    let dir = path.join(__dirname, dist, file);
-    writeFile(dir, html);
-  });
+    buildHTML(src, file, data);
+   });
 }
 
-main(source, dest);
+main(source);
