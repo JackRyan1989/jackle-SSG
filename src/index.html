@@ -1,3 +1,0 @@
-<html lang="en"> <head > <meta content="{{meta.charset}}"/>  <title > {{meta.title}} </title> <meta name="description" content="{{meta.description}}"/>  <meta name="viewport" content="{{meta.viewport}}"/>  <meta name="theme-color" content="{{meta.themeColor}}"/>  <link rel="stylesheet" href="./stylesheets/global.css"/>  </head> <body > <header > <h1 class="pad1"> {{{main.heading}}} </h1> </header> <article id="intro"> <p > {{{main.intro}}} </p> </article> <article id="desc"> <p > {{{main.description}}} </p> </article> <article id="links"> <ul > {{#each main.externalLinks}}
-                    <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>
-                {{/each}} </ul> </article> </body> </html>
