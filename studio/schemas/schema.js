@@ -11,7 +11,36 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    /* Your types here! */
+    // We need to mock up schemas for each page and component
+    // Pages:
+    // 1. Index
+        // a. Meta info
+        // b. Page content
+    // 2. Documentation Overview
+        // a. Meta info
+        // b. Page content
+    // 3. Handelbars Setup
+        // a. Meta info
+        // b. Page content
+    // 4. Sanity IO Setup
+        // a. Meta info
+        // b. Page content
+    // 5. Netlify Setup
+        // a. Meta info
+        // b. Page content
+    // 6. Compiler Explanation
+        // a. Meta info
+        // b. Page content
+    // 7. Jackyll Syntax
+        // a. Meta info
+        // b. Page content
+    // 8. CSS Utility Class List
+        // a. Meta info
+        // b. Page content - just a list of all of the utility classes
+    // Conponents:
+    // 1. Left Navigation
+    // 2. Footer
+    // 3. Next page / Previous Page
     {
       title: "Meta Information",
       name: "meta",

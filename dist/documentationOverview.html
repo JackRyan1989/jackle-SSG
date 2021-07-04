@@ -1,0 +1,41 @@
+<html lang="en"> <head > <meta content="text/html; charset&#x3D;utf-8"/>  <title > Jackal Static Site Generator </title> <meta name="description" content="Super Simple Static Site Generator"/>  <meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;5"/>  <meta name="theme-color" content="#FB966E"/>  <link rel="stylesheet" href="./stylesheets/global.css"/>  </head> <body > <header > <h1 class="pad1"> Jackal Static Site Generator </h1> </header> <article id="intro"> <p > 
+                Jackyll SSG uses a few bootstraps off of a few existing technologies:
+                <ul>
+                    <li>Handlebars Templating Engine</li>
+                    <li>Sanity IO</li>
+                    <li>Netlify</li>
+                </ul>
+             </p> <p > 
+                Plus something (kinda) new: the Jackyll Compiler.
+             </p> <p > 
+                What do each of these things do and why should I care, you ask? Well... 
+                For any static site generator you really need two, actually three things:
+                <ol>
+                <li>Templating Engine. Handlebars satisfies this role.</li>
+                <li>Data source. We're getting fancy and using Sanity IO as a CMS for our data. You could use a JSON file though.</li>
+                <li>Somewhere to host your website! We're using Netlify for their webhooks to integrate with Github.</li>
+                </ol>
+             </p> </article> <article > <p > 
+                What's this Jackal compiler about? Well, for some static site generators, you just write an HTML file with
+                the additional syntax that your templating engine needs. So, for HTML and Handlebars you'd do something like this:
+                <br/>
+                <blockquote>
+                    <code>
+                        <h1></h1>
+                    </code>
+                </blockquote>
+                <br/>
+                And the Handlebars compiler would dump out:
+                <blockquote>
+                    <code>
+                        <h1>My heading!!!</h1>
+                    </code>
+                </blockquote>
+                <br/>
+                Ever since seeing what Svelte can do with a compiler I've been pretty interested in learning about them.
+                Sooo I worked throught the <a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="norefferer noopener">The Super Tiny Compiler</a> and
+                ended up with the Jackle/Jackyll/Jackal syntax for writing HTML. Only gotcha is you can't put square brackets in your content! No big deal right?
+             </p> <p > 
+                Why do this? Doesn't something like this already exist? Yes, check out <a href="https://pugjs.org/api/getting-started.html" target="_blank" rel="norefferer noopener">Pug</a>. But I
+                wanted to learn about compilers and static site generators, so here we are! Deal with it.
+             </p> <p > I'll go into more detail about setting up all of the pieces and explaining the main build script along with the compiler on subsequent pages. So if you're ready to dive in, click the next page link below!  </p> </article> </body> </html>
