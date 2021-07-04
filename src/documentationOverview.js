@@ -62,7 +62,7 @@
                 <br/>
                 <blockquote>
                     <code>
-                        <h1>{{some.value}}</h1>
+                        <h1>"{{some.value}}"</h1>
                     </code>
                 </blockquote>
                 <br/>
