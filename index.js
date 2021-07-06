@@ -57,6 +57,9 @@ async function getSanityData() {
   data.css.content = blocksToHtml({
     blocks: data.css.content,
   });
+  data.footer.footerContent = blocksToHtml({
+    blocks: data.footer.footerContent,
+  });
   return await data;
 }
 

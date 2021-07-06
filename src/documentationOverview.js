@@ -40,8 +40,8 @@
         }
         aside: {
             ul: {
-                [{{#each index.externalLinks}}
-                    <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>
+                [{{#each nav-links.internalLinks}}
+                    <li> <a href="{{this.href}}" >{{this.text}}</a></li>
                 {{/each}}]
             }
         }

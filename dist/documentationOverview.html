@@ -1,76 +1,21 @@
-<html lang="en">
-
-<head>
-   <meta content="text/html; charset&#x3D;utf-8" />
-   <title> Jackal Static Site Generator </title>
-   <meta name="description" content="Super Simple Static Site Generator" />
-   <meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;5" />
-   <meta name="theme-color" content="#FB966E" />
-   <link rel="stylesheet" href="./stylesheets/global.css" />
-</head>
-
-<body>
-   <header>
-      <h1 class="pad1"> How to use Jackyll/Jackal/Jackle </h1>
-   </header>
-   <article id="intro">
-      <p>
-      <div>
-         <p><em><del>JackalJackle</del></em>Jackyll Static Site Generator (SSG) bootstraps off of a few existing
-            technologies: </p>
-         <ol>
-            <li>Handlebars Templating Engine</li>
-            <li>Sanity IO</li>
-            <li>Netlify</li>
-         </ol>
-         <p>Plus something (kinda) new: the Jackyll Compiler. OwO </p>
-         <p>What do each of these things do and why should I care, you ask? Well... For any <em>static site
-               generator</em> you really need two, actually three things: </p>
-         <ul>
-            <li>Templating Engine. Handlebars satisfies this role.</li>
-            <li>Data source. We're getting fancy and using Sanity IO as a CMS for our data. You could use a JSON file
-               though.</li>
-            <li>Somewhere to host your website! We're using Netlify and their webhooks to integrate with Github.</li>
-         </ul>
-         <p>What's this Jackal compiler about? Well, for some static site generators, you just write an HTML file with
-            the additional syntax that your templating engine needs. So, for HTML and Handlebars you'd do something like
-            this: </p>
-         <p><code>&lt;h1&gt;"{{some.value}}"&lt;/h1&gt; </code></p>
-         <p>some.value points to a key-value pair stored somewhere that Handlebars knows about. If the value of the
-            property, some.value = "My heading!" Handlebars would pump out:</p>
-         <p><code>&lt;h1&gt;My heading!!!&lt;/h1&gt;</code> </p>
-         <p>Neat huh? </p>
-         <p>Ever since seeing what Svelte can do with a compiler I've been pretty interested in learning about them.
-            Sooo I worked through the <a href="https://github.com/jamiebuilds/the-super-tiny-compiler">The Super Tiny
-               Compiler</a> and ended up with the Jackal syntax for writing HTML. </p>
-         <p>Why do this? Doesn't something like this already exist? Yes, check out <a
-               href="https://pugjs.org/api/getting-started.html">PugJS</a>. But I wanted to learn about compilers and
-            static site generators, so here we are! Deal with it. I'll go into more detail about setting up all of the
-            pieces and explaining the main build script along with the compiler on subsequent pages. So if you're ready
-            to dive in, click the next page link below! </p>
-      </div>
-      </p>
-   </article>
-   <aside>
-      <ul>
-         <li> <a href="https://www.smashingmagazine.com/2020/09/stack-custom-made-static-site-generator/"
-               target="_blank">Simplify Your Stack With A Custom-Made Static Site Generator</a></li>
-
-         <li> <a href="https://www.sanity.io/" target="_blank">Sanity IO</a></li>
-
-         <li> <a href="https://www.netlify.com/" target="_blank">Netlify</a></li>
-
-         <li> <a href="https://handlebarsjs.com/" target="_blank">Handlebars</a></li>
-      </ul>
-   </aside>
-   <footer>
-      <p> [object Object] </p>
-      <ul>
-         <li> <a href="https://www.linkedin.com/in/johnanthonyryan/" target="_blank">LinkedIn</a></li>
-
-         <li> <a href="https://jackportfolio.netlify.app/" target="_blank">Portfolio</a></li>
-      </ul>
-   </footer>
-</body>
-
-</html>
+<html lang="en"> <head > <meta content="text/html; charset&#x3D;utf-8"/>  <title > Jackal Static Site Generator </title> <meta name="description" content="Super Simple Static Site Generator"/>  <meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;5"/>  <meta name="theme-color" content="#FB966E"/>  <link rel="stylesheet" href="./stylesheets/global.css"/>  </head> <body > <header > <h1 class="pad1"> How to use Jackyll/Jackal/Jackle </h1> </header> <article id="intro"> <p > 
+                <div><p><em><del>JackalJackle</del></em>Jackyll Static Site Generator (SSG) bootstraps off of a few existing technologies: </p><ol><li>Handlebars Templating Engine</li><li>Sanity IO</li><li>Netlify</li></ol><p>Plus something (kinda) new: the Jackyll Compiler. OwO  </p><p>What do each of these things do and why should I care, you ask? Well... For any <em>static site generator</em> you really need two, actually three things: </p><ul><li>Templating Engine. Handlebars satisfies this role.</li><li>Data source. We're getting fancy and using Sanity IO as a CMS for our data. You could use a JSON file though.</li><li>Somewhere to host your website! We're using Netlify and their webhooks to integrate with Github.</li></ul><p>What's this Jackal compiler about? Well, for some static site generators, you just write an HTML file with the additional syntax that your templating engine needs. So, for HTML and Handlebars you'd do something like this: </p><p><code>&lt;h1&gt;"{{some.value}}"&lt;/h1&gt; </code></p><p>some.value points to a key-value pair stored somewhere that Handlebars knows about. If the value of the property, some.value = "My heading!" Handlebars would pump out:</p><p><code>&lt;h1&gt;My heading!!!&lt;/h1&gt;</code> </p><p>Neat huh? </p><p>Ever since seeing what Svelte can do with a compiler I've been pretty interested in learning about them. Sooo I worked through the <a href="https://github.com/jamiebuilds/the-super-tiny-compiler">The Super Tiny Compiler</a> and ended up with the Jackal syntax for writing HTML. </p><p>Why do this? Doesn't something like this already exist? Yes, check out <a href="https://pugjs.org/api/getting-started.html">PugJS</a>. But I wanted to learn about compilers and static site generators, so here we are! Deal with it. I'll go into more detail about setting up all of the pieces and explaining the main build script along with the compiler on subsequent pages. So if you're ready to dive in, click the next page link below! </p></div>
+             </p> </article> <aside > <ul > 
+                    <li> <a href="/index.html" >Home</a></li>
+                
+                    <li> <a href="/documentationOverview.html" >Documentation Overview</a></li>
+                
+                    <li> <a href="/cssRef.html" >CSS Class Reference </a></li>
+                
+                    <li> <a href="/hbrs.html" >Handlebars Steup</a></li>
+                
+                    <li> <a href="/netlify.html" >Netlify Setup</a></li>
+                
+                    <li> <a href="/sanity.html" >Sanity IO Setup</a></li>
+                
+                    <li> <a href="/syntax.html" >Jackle Compiler</a></li>
+                 </ul> </aside> <footer > <p > <p>2021 Jack Ryan --- <a href="https://github.com/JackRyan1989/jackle-SSG">Github</a></p> </p> <ul > 
+                    <li> <a href="https://www.linkedin.com/in/johnanthonyryan/" target="_blank">LinkedIn</a></li>
+                
+                    <li> <a href="https://jackportfolio.netlify.app/" target="_blank">Portfolio</a></li>
+                 </ul> </footer> </body> </html>

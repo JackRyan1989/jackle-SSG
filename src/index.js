@@ -38,8 +38,7 @@
                 [{{{index.intro}}}]
             }
         }
-        article: {
-            id(links)
+        aside: {
             ul: {
                 [{{#each nav-links.internalLinks}}
                     <li> <a href="{{this.href}}" >{{this.text}}</a></li>
