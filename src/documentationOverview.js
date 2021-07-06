@@ -41,17 +41,18 @@
         aside: {
             ul: {
                 [{{#each nav-links.internalLinks}}
-                    <li> <a href="{{this.href}}" >{{this.text}}</a></li>
+                    <li class="pad2"> <a href="{{this.href}}" >{{this.text}}</a></li>
                 {{/each}}]
             }
         }
         footer: {
+            class(pad2)
             p: {
                 [{{{footer.footerContent}}}]
             }
-            ul: {
+            div: {
                 [{{#each footer.socialLinks}}
-                    <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>
+                     <a class="pad1" href="{{this.href}}" target="{{this.target}}">{{this.text}}</a>
                 {{/each}}]
             }
         }

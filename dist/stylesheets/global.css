@@ -14,21 +14,16 @@ body {
     margin: 0px;
     background-color: rgba(238, 194, 161, 0.74);
     display: grid;
-    place-items: center;
     width: 100%;
-    grid-template-areas:  "head" 
-                          "intro"
-                          "description" 
-                          "links"  
-    ;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(min-content, 1fr);
+    grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
+    grid-template-rows: min-content min-content 1fr min-content;
+    gap: 1px;
 }
 /* Header Element */
 header {
     width: 100%;
-    grid-area: head;
     background-color: whitesmoke;
+    grid-column: 1 / -1;
 }
 p, li {
     font-size: 1.5em;
@@ -41,18 +36,46 @@ li {
 article {
     padding: 0px 2.5%;
     max-width: 75ch;
+    grid-column: 2 / 3;
 }
 
 #intro {
-grid-area: intro;
+    grid-column: 2 / 3;
 }
 
 #desc {
-grid-area: description;
+    grid-column: 2 / 3;
 }
 
 #links {
-grid-area: links;
+    grid-column: 2 / 3;
+}
+
+aside {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    border-right: solid 1px black;
+}
+
+aside li {
+    list-style: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    grid-column: 1 / -1;
+    border-top: solid 1px black;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer div a {
+    font-size: 1.5em;
 }
 
 /* Padding classes */

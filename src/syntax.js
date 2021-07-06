@@ -42,5 +42,23 @@
                 [ {{{compiler.syntax}}} ]
             }
         }
+        aside: {
+            ul: {
+                [{{#each nav-links.internalLinks}}
+                    <li class="pad2"> <a href="{{this.href}}" >{{this.text}}</a></li>
+                {{/each}}]
+            }
+        }
+        footer: {
+            class(pad2)
+            p: {
+                [{{{footer.footerContent}}}]
+            }
+            div: {
+                [{{#each footer.socialLinks}}
+                     <a class="pad1" href="{{this.href}}" target="{{this.target}}">{{this.text}}</a>
+                {{/each}}]
+            }
+        }
     }
 }`
