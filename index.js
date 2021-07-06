@@ -11,12 +11,12 @@ function makeFileList(src) {
   const dirPath = path.join(__dirname, src);
   let fileList = fs
     .readdirSync(dirPath, "utf8")
-    .filter((file) => path.extname(file).toLowerCase() === '.js');
+    .filter((file) => path.extname(file).toLowerCase() === ".js");
   return fileList;
 }
 
 function writeFile(directory, content) {
-  if ((directory.split(".").pop() === "html") ) {
+  if (directory.split(".").pop() === "html") {
     fs.writeFile(directory, content, function (err) {
       if (err) return console.log(err);
     });
@@ -26,16 +26,15 @@ function writeFile(directory, content) {
 //Get the data from Sanity IO.
 async function getSanityData() {
   //Fetch the data
-  let data = await client.fetch(query);
+  let data;
+  try {
+    data = await client.fetch(query);
+  } catch (err) {
+    console.error(err);
+  }
   //Convert the block content from the RTE to HTML
   data.index.intro = blocksToHtml({
     blocks: data.index.intro,
-  });
-  data.index.description = blocksToHtml({
-    blocks: data.index.description,
-  });
-  data.index.next = blocksToHtml({
-    blocks: data.index.next,
   });
   data.overview.content = blocksToHtml({
     blocks: data.overview.content,
