@@ -29,13 +29,17 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{compiler.heading}}}]
             }
         }
         article: {
-            id(intro)
-            h2: {
-                [ Jackyll Syntax & Compiler ]
+            p: {
+                [ {{{compiler.compiler}}} ]
+            }
+        }
+        article: {
+            p: {
+                [ {{{compiler.syntax}}} ]
             }
         }
     }

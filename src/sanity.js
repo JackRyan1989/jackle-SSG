@@ -29,13 +29,13 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{sanity.heading}}}]
             }
         }
         article: {
             id(intro)
-            h2: {
-                [ Setting up Sanity IO]
+            p: {
+                [{{{sanity.content}}}]
             }
         }
     }

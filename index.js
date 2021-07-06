@@ -28,14 +28,35 @@ async function getSanityData() {
   //Fetch the data
   let data = await client.fetch(query);
   //Convert the block content from the RTE to HTML
-  data.main.intro = blocksToHtml({
-    blocks: data.main.intro,
+  data.index.intro = blocksToHtml({
+    blocks: data.index.intro,
   });
-  data.main.description = blocksToHtml({
-    blocks: data.main.description,
+  data.index.description = blocksToHtml({
+    blocks: data.index.description,
   });
-  data.main.next = blocksToHtml({
-    blocks: data.main.next,
+  data.index.next = blocksToHtml({
+    blocks: data.index.next,
+  });
+  data.overview.content = blocksToHtml({
+    blocks: data.overview.content,
+  });
+  data.hbrs.content = blocksToHtml({
+    blocks: data.hbrs.content,
+  });
+  data.sanity.content = blocksToHtml({
+    blocks: data.sanity.content,
+  });
+  data.netlify.content = blocksToHtml({
+    blocks: data.netlify.content,
+  });
+  data.compiler.compiler = blocksToHtml({
+    blocks: data.compiler.compiler,
+  });
+  data.compiler.syntax = blocksToHtml({
+    blocks: data.compiler.syntax,
+  });
+  data.css.content = blocksToHtml({
+    blocks: data.css.content,
   });
   return await data;
 }

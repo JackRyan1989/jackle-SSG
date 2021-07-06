@@ -315,6 +315,20 @@ export default createSchema({
             },
           ],
         },
+        { name: "socialLinks",
+          title: "Social links",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                { name: "text", title: "Link text", type: "string" },
+                { name: "href", title: "Link url", type: "string" },
+                { name: "target", title: "Target", type: "string" }
+              ],
+            },
+          ],
+        }
       ]
     }
   ]),

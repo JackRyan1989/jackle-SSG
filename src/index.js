@@ -29,26 +29,20 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{index.heading}}}]
             }
         }
         article: {
             id(intro)
             p: {
-                [{{{main.intro}}}]
-            }
-        }
-        article: {
-            id(desc)
-            p: {
-                [{{{main.description}}}]
+                [{{{index.intro}}}]
             }
         }
         article: {
             id(links)
             ul: {
-                [{{#each main.externalLinks}}
-                    <li> <a href="{{this.href}}" target="{{this.target}}">{{this.text}}</a></li>
+                [{{#each nav-links.internalLinks}}
+                    <li> <a href="{{this.href}}" >{{this.text}}</a></li>
                 {{/each}}]
             }
         }

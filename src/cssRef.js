@@ -29,13 +29,13 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{css.heading}}}]
             }
         }
         article: {
             id(intro)
-            h2: {
-                [ CSS Utility Class List ]
+            p: {
+                [{{{css.content}}}]
             }
         }
     }

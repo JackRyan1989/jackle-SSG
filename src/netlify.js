@@ -29,13 +29,13 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{netlify.heading}}}]
             }
         }
         article: {
             id(intro)
-            h2: {
-                [ Setting up Netlify]
+            p: {
+                [{{{netlify.content}}}]
             }
         }
     }

@@ -29,13 +29,13 @@
         header: {
             h1: {
                 class(pad1)
-                [{{{main.heading}}}]
+                [{{{hbrs.heading}}}]
             }
         }
         article: {
             id(intro)
-            h2: {
-                [ Setting up Handlebars]
+            p: {
+                [{{{hbrs.content}}}]
             }
         }
     }
