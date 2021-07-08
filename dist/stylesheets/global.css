@@ -16,7 +16,7 @@ body {
     display: grid;
     width: 100%;
     grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
-    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-rows: min-content 2fr 1fr;;
     gap: 1px;
 }
 
@@ -36,7 +36,7 @@ body {
 header {
     width: 100%;
     grid-column: 1 / -1;
-    border-bottom: solid 1px black;
+    border-bottom: double 5px black;
 }
 
 p {
@@ -52,6 +52,7 @@ article {
     padding: 0px 2.5%;
     max-width: 75ch;
     grid-column: 2 / 3;
+    height: 100%;
 }
 
 #intro {
@@ -70,6 +71,7 @@ aside {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
     border-right: solid 1px black;
+    height: 100%;
 }
 
 aside li {
@@ -77,10 +79,15 @@ aside li {
 }
 
 footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     grid-column: 1 / -1;
     border-top: solid 1px black;
+    background-color: rgba(250, 169, 108, 1);
+    z-index: 3;
 }
 
 footer div {
@@ -110,6 +117,9 @@ a:focus {
 
 code {
     font-size: 1.25em;
+    border-left: dashed 3px seagreen;
+    border-right: dashed 3px seagreen;
+    padding: 0px 1%;
 }
 
 /* Padding classes */
