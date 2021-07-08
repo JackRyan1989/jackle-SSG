@@ -17,7 +17,6 @@ body {
     width: 100%;
     grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
     grid-template-rows: min-content min-content 1fr min-content;
-    gap: 1px;
 }
 
 @media screen and (max-width: 550px) {
@@ -28,7 +27,6 @@ body {
         width: 100%;
         grid-template-columns: minmax(10px, 1fr);
         grid-template-rows: min-content min-content 1fr min-content;
-        gap: 1px;
     }
 }
 
@@ -53,6 +51,9 @@ article {
     max-width: 75ch;
     grid-column: 2 / 3;
     height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    border-right: solid 1px black;
 }
 
 #intro {
@@ -103,6 +104,7 @@ h3 {
 
 a {
     padding: 1%;
+    color: #000;
 }
 
 a:hover,
