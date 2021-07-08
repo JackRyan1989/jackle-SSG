@@ -1,17 +1,17 @@
-<html lang="en"> <head > <meta content="text/html; charset&#x3D;utf-8"/>  <title > Jackal Static Site Generator </title> <meta name="description" content="Super Simple Static Site Generator"/>  <meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;5"/>  <meta name="theme-color" content="#FB966E"/>  <link rel="stylesheet" href="./stylesheets/global.css"/>  </head> <body > <header > <h1 class="pad1"> Jackell Compiler </h1> </header> <article > <p >  <p>Write this.</p>  </p> </article> <article > <p >  <p>Write this too!</p>  </p> </article> <aside > <ul > 
+<html lang="en"> <head > <meta content="text/html; charset&#x3D;utf-8"/>  <title > Jackal Static Site Generator </title> <meta name="description" content="Super Simple Static Site Generator"/>  <meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;5"/>  <meta name="theme-color" content="#FB966E"/>  <link rel="stylesheet" href="./stylesheets/global.css"/>  </head> <body > <header > <h1 class="pad1"> Jackell Compiler </h1> </header> <article > <p >  <div><p>As mentioned before the compiler is based off of the <a href="https://github.com/jamiebuilds/the-super-tiny-compiler">Super Tiny Compiler</a>.</p><p>I <em>strongly </em>suggest that you read through and maybe even build your own compiler! It's a fun rewarding learning process. Anyway...</p><h2>How it goes:</h2><p>The compiler operates using 6 scripts:</p><p>1. Tokenizer</p><p>2. Parser</p><p>3. Transformer</p><p>4. Traverser</p><p>5. Generator</p><p>6. 'Compiler' script that pulls it all together</p><p>So what do they all do? Let's start with the parser.</p><h3>The Tokenizer</h3><p>Takes a string of code and break it down into an array of tokens. What's the thought</p><p> </p></div>  </p> </article> <article > <p >  <div><p>Hey, so you want to write a Jackal file to be compiled to HTML? Okey dokey.</p><p>HTML elements:</p><p><code>h1: {</code></p><p>The opening bracket contains all of the content that will be nested in that element.</p><p>Element attributes like class and id are written inside the bracket as such:</p><p><code>class(className)</code></p><p><code>id(idName)</code></p><p>Square brackets signify string content or other content that is placed in the element.</p><p><code>p:{</code></p><p><code>class(paragraph)</code></p><p><code>[This is going to be inside the p tag!]}</code></p></div>  </p> </article> <aside > <ul > 
                     <li class="pad2"> <a href="/index.html" >Home</a></li>
                 
                     <li class="pad2"> <a href="/documentationOverview.html" >Documentation Overview</a></li>
                 
-                    <li class="pad2"> <a href="/cssRef.html" >CSS Class Reference </a></li>
+                    <li class="pad2"> <a href="/syntax.html" >Jackle Compiler</a></li>
                 
                     <li class="pad2"> <a href="/hbrs.html" >Handlebars Steup</a></li>
                 
-                    <li class="pad2"> <a href="/netlify.html" >Netlify Setup</a></li>
-                
                     <li class="pad2"> <a href="/sanity.html" >Sanity IO Setup</a></li>
                 
-                    <li class="pad2"> <a href="/syntax.html" >Jackle Compiler</a></li>
+                    <li class="pad2"> <a href="/netlify.html" >Netlify Setup</a></li>
+                
+                    <li class="pad2"> <a href="/cssRef.html" >CSS Class Reference </a></li>
                  </ul> </aside> <footer class="pad2"> <p > <p>2021 Jack Ryan</p> </p> <div > 
                      <a class="pad1" href="https://www.linkedin.com/in/johnanthonyryan/" target="_blank">LinkedIn</a>
                 

@@ -19,10 +19,22 @@ body {
     grid-template-rows: min-content min-content 1fr min-content;
     gap: 1px;
 }
+
+@media screen and (max-width: 550px) {
+    body {
+        margin: 0px;
+        background-color: rgba(250, 169, 108, 0.74);
+        display: grid;
+        width: 100%;
+        grid-template-columns: minmax(10px, 1fr);
+        grid-template-rows: min-content min-content 1fr min-content;
+        gap: 1px;
+    }
+}
+
 /* Header Element */
 header {
     width: 100%;
-    background-color: whitesmoke;
     grid-column: 1 / -1;
 }
 p, li {
@@ -93,4 +105,21 @@ footer div a {
 }
 .pad5 {
     padding: 5%;
+}
+
+/* margin classes */
+.marg1 {
+    margin: 1%;
+}
+.marg2 {
+    margin: 2%;
+}
+.marg3 {
+    margin: 3%;
+}
+.marg4 {
+    margin: 4%;
+}
+.marg5 {
+    margin: 5%;
 }
