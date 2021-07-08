@@ -93,6 +93,28 @@ footer div a {
     font-size: 1.5em;
 }
 
+h3 {
+    border-bottom: dashed 2px darksalmon;
+    font-size: 1.45em;
+}
+
+a {
+    padding: 1%;
+}
+
+a:hover,
+a:focus {
+    border: dotted 2px blue;
+    border-radius: 5px;
+}
+
+code {
+    background: black;
+    color: #fff;
+    margin: 2.5% 0;
+    
+}
+
 /* Padding classes */
 .pad1 {
     padding: 1%;
