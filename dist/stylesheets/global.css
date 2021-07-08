@@ -12,7 +12,7 @@ html {
 /* Body Styling */
 body {
     margin: 0px;
-    background-color: rgba(250, 169, 108, 0.74);
+    background-color: wheat;
     display: grid;
     width: 100%;
     grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
@@ -22,7 +22,6 @@ body {
 @media screen and (max-width: 550px) {
     body {
         margin: 0px;
-        background-color: rgba(250, 169, 108, 0.74);
         display: grid;
         width: 100%;
         grid-template-columns: minmax(10px, 1fr);
@@ -30,11 +29,15 @@ body {
     }
 }
 
-/* Header Element */
+h1 {
+    font-weight: bolder;
+}
+
 header {
     width: 100%;
     grid-column: 1 / -1;
     border-bottom: double 5px black;
+    background-color: whitesmoke;
 }
 
 p {
@@ -72,7 +75,6 @@ aside {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
     border-right: solid 1px black;
-    height: 100%;
 }
 
 aside li {
@@ -85,6 +87,7 @@ footer {
     flex-direction: row;
     grid-column: 1 / -1;
     border-top: solid 1px black;
+    background-color: whitesmoke;
 }
 
 footer div {
@@ -115,9 +118,9 @@ a:focus {
 
 code {
     font-size: 1.25em;
-    border-left: dashed 3px seagreen;
-    border-right: dashed 3px seagreen;
+    border-bottom: dashed 3px seagreen;
     padding: 0px 1%;
+    line-height: 1.5em;
 }
 
 /* Padding classes */
