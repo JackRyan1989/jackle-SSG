@@ -49,16 +49,5 @@
                 {{/each}}]
             }
         }
-        footer: {
-            class(pad2)
-            p: {
-                [{{{footer.footerContent}}}]
-            }
-            div: {
-                [{{#each footer.socialLinks}}
-                     <a class="pad1" href="{{this.href}}" target="{{this.target}}">{{this.text}}</a>
-                {{/each}}]
-            }
-        }
     }
 }`
