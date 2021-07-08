@@ -57,6 +57,7 @@ article {
     width: 100%;
     background-color: whitesmoke;
     border-right: solid 1px black;
+    border-bottom: solid 1px black;
 }
 
 #intro {
