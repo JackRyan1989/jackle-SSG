@@ -1,0 +1,35 @@
+{
+    "dirs": {
+        "test": {
+            "content": {
+                "files": [
+                    "about.js"
+                ]
+            }
+        },
+        "test2": {
+            "content": {
+                "files": ["file1.js", "file2.html", "file3.css"],
+                "dirs": {
+                    "subtest1": {
+                        "content": {
+                            "files": ["subfile4.js", "subfile5.html", "subfile6.css"]
+                        }
+                    },
+                    "subtest2": {
+                        "content": {
+                            "files": ["subfile7.js", "subfile8.html", "subfile9.css"],
+                            "dirs": {
+                                "subsubtest1": {
+                                    "content": {
+                                        "files": ["subsubfile1.js", "subsubfile2.html", "subsubfile3.css"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
